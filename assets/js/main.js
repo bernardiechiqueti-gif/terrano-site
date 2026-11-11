@@ -4,7 +4,19 @@
    ========================================================= */
 const CONFIG = {
   whatsapp: "5545999371887", // número com DDI + DDD, só dígitos
+  // Conversão do Google Ads "Clique WhatsApp - Site" (conta 534-967-8946)
+  adsConversao: "AW-17785428601/mwbGCMDQzrYdEPm04KBC",
 };
+
+/* Registra no Google Ads cada vez que alguém abre o WhatsApp pelo site */
+function registrarConversaoWhatsApp(origem) {
+  try {
+    if (typeof gtag === "function") {
+      gtag("event", "conversion", { send_to: CONFIG.adsConversao });
+      gtag("event", "clique_whatsapp", { origem: origem || "", pagina: location.pathname });
+    }
+  } catch (e) { /* nunca atrapalhar o clique */ }
+}
 
 (function () {
   const doc = document.documentElement;
@@ -37,6 +49,7 @@ const CONFIG = {
     el.href = `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(msg)}`;
     el.target = "_blank";
     el.rel = "noopener";
+    el.addEventListener("click", () => registrarConversaoWhatsApp(el.className.includes("wa-float") ? "botao-flutuante" : "botao"));
   });
 
   /* ---------- Reveal on scroll ---------- */
@@ -124,6 +137,7 @@ const CONFIG = {
         f.get("cidade") ? `*Local da obra:* ${f.get("cidade")}` : "",
         f.get("mensagem") ? `*Mensagem:* ${f.get("mensagem")}` : "",
       ].filter(Boolean);
+      registrarConversaoWhatsApp("formulario");
       window.open(`https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(lines.join("\n"))}`, "_blank", "noopener");
     });
   }
