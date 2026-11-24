@@ -18,7 +18,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css?v=2">
   <!-- Google tag (Google Ads AW-17785428601) — mede cliques no WhatsApp como conversão -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17785428601"></script>
   <script>
@@ -99,7 +99,7 @@
 <!-- ============ HERO ============ -->
 <section class="page-hero dark">
   <div class="contours" data-seed="33" data-x="0.82" data-y="0.55"></div>
-  <div class="container page-hero-grid">
+  <div class="container page-hero-grid page-hero-grid--photo">
     <div>
       <nav class="breadcrumb reveal" aria-label="Você está em"><a href="index.html">Início</a><span>/</span><span>Sondagem SPT</span></nav>
       <span class="eyebrow reveal">Sondagem SPT · NBR 6484</span>
@@ -110,7 +110,8 @@
         <a class="btn btn--ghost" href="#como-funciona">Como funciona</a>
       </div>
     </div>
-    <svg class="hero-symbol reveal" data-delay="2" aria-hidden="true"><use href="#t-symbol"/></svg>
+    <figure class="hero-photo reveal" data-delay="2">
+      <img src="assets/img/sondagem/spt-tripe.jpg" alt="Equipe da Terrano montando o tripé de sondagem SPT em campo" width="900" height="1200" fetchpriority="high">    </figure>
   </div>
 </section>
 
@@ -151,6 +152,30 @@
       <a class="btn btn--accent" data-wa="Olá! Gostaria de um orçamento de sondagem SPT. Local do terreno: / Área aproximada da obra:" href="#">Pedir pelo WhatsApp <svg><use href="#arrow"/></svg></a>
       <a class="btn btn--ghost" href="#contato">Usar o formulário</a>
     </aside>
+  </div>
+</section>
+
+<!-- ============ EM CAMPO (fotos e vídeo reais) ============ -->
+<section class="section bg-panel" id="em-campo">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow reveal">Em campo</span>
+        <h2 class="h-lg reveal" data-delay="1">A sondagem SPT na prática.</h2>
+      </div>
+      <p class="lead reveal" data-delay="2">Equipe própria, equipamento próprio e o ensaio executado metro a metro conforme a NBR 6484. Veja como é um dia de sondagem da Terrano.</p>
+    </div>
+    <div class="field-gallery">
+      <figure class="field-video reveal">
+        <video controls preload="metadata" playsinline width="576" height="1024" aria-label="Vídeo da equipe Terrano executando uma sondagem SPT">
+          <source src="assets/video/sondagem-spt.mp4#t=0.5" type="video/mp4">
+        </video>
+        <figcaption>Vídeo: o ensaio em execução</figcaption>
+      </figure>
+      <figure class="field-photo reveal"><img src="assets/img/sondagem/spt-operando.jpg" alt="Operadores da Terrano conduzindo o martelo no tripé de sondagem" loading="lazy" width="900" height="1200"><figcaption>Cravação do amostrador</figcaption></figure>
+      <figure class="field-photo reveal" data-delay="1"><img src="assets/img/sondagem/spt-equipe-tripe.jpg" alt="Equipe da Terrano trabalhando ao redor do tripé de sondagem" loading="lazy" width="900" height="1200"><figcaption>Equipe e equipamento próprios</figcaption></figure>
+      <figure class="field-photo reveal" data-delay="2"><img src="assets/img/sondagem/spt-amostrador.jpg" alt="Equipe da Terrano manuseando a composição de hastes da sondagem" loading="lazy" width="900" height="1200"><figcaption>Manuseio das hastes e amostras</figcaption></figure>
+    </div>
   </div>
 </section>
 
