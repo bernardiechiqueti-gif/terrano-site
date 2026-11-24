@@ -292,6 +292,9 @@ strong { font-weight: 600; }
 .field-gallery img, .field-gallery video { display: block; width: 100%; height: auto; border-radius: var(--radius); background: #1d1814; }
 .field-video video { aspect-ratio: 9 / 16; object-fit: cover; }
 .field-photo img { aspect-ratio: 3 / 4; object-fit: cover; }
+/* mosaico 2x2 de amostras: ocupa o mesmo espaço (3:4) de uma foto */
+.mosaic { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; aspect-ratio: 3 / 4; border-radius: var(--radius); overflow: hidden; }
+.field-gallery .mosaic img { width: 100%; height: 100%; aspect-ratio: auto; object-fit: cover; border-radius: 0; }
 .field-gallery figcaption { margin-top: 12px; font-size: 14px; line-height: 1.45; color: var(--muted); }
 @media (max-width: 900px) {
   .field-gallery { grid-template-columns: 9fr 12fr; gap: 12px; }
